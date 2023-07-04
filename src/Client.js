@@ -103,7 +103,7 @@ class Client extends EventEmitter {
                 browserArgs.push(`--user-agent=${this.options.userAgent}`);
             }
 
-            browser = await puppeteer.launch({...puppeteerOpts, args: browserArgs});
+            browser = await puppeteer.launch({...puppeteerOpts, args: browserArgs, executablePath: '/usr/bin/chromium-browser'});
             page = (await browser.pages())[0];
         }
 
